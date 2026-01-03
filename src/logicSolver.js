@@ -262,7 +262,7 @@ export function solveProof(premisesStr, conclusionStr) {
   for (const step of initialPath) collectGoals(step.node);
 
   // Iterative deepening search
-  for (let depth = 1; depth <= 12; ++depth) { // Reduced max depth slightly for browser safety
+  for (let depth = 1; depth <= 10; ++depth) { // Reduced max depth slightly for browser safety
     const proof = [...initialPath];
     if (findPath(proof, conclusion, 0, depth)) {
       return { 
